@@ -16,6 +16,7 @@ lazy val root = (project in file(".")).aggregate(library)
 lazy val library =
   project.in(file("library")).
     configs(IntegrationTest).
+    enablePlugins(JmhPlugin).
     settings(commonSettings: _*).
     settings(Defaults.itSettings: _*).
     settings(
